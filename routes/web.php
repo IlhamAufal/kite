@@ -21,11 +21,10 @@ Route::middleware('guest')->group(function () {
 Route::middleware(['auth', 'session.timeout'])->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/', [AuthController::class, 'index'])->name('dashboard');
-    });
-    
     Route::get('/datalog', [DatalogController::class, 'index'])->name('datalog');
-    
-    Route::middleware(['auth'])->prefix('reports')->name('reports.')->group(function () {
+});
+
+Route::middleware(['auth'])->prefix('reports')->name('reports.')->group(function () {
     Route::get('/report', [ReportController::class, 'index'])->name('report');
     Route::get('/pencatatan-penyesuaian', [ReportController::class, 'pencatatanPenyesuaian'])->name('pencatatan-penyesuaian');
     Route::get('/peb-change-log', [ReportController::class, 'pebChangeLog'])->name('peb-change-log');

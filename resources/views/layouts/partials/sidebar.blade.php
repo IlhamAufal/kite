@@ -1,6 +1,6 @@
 <aside class="w-64 bg-slate-900 text-slate-300 flex flex-col transition-all duration-300 shadow-xl z-20">
 
-    <div class="h-16 flex items-center justify-center px-6 bg-gradient-to-r from-[#5eb3d6] to-[#4a9fc6]">
+    <div class="h-16 flex items-center justify-center px-6 bg-blue-600">
         <a href="{{ route('dashboard') }}" class="font-fredoka text-2xl tracking-wide text-white drop-shadow-sm">
             YUPI KITE
         </a>
