@@ -43,7 +43,8 @@
                             <th class="px-4 py-3">Mata Uang</th>
                             <th class="px-4 py-3 text-right">Nilai</th>
                             <th class="px-4 py-3">Gudang</th>
-                            <th class="px-4 py-3 rounded-r-xl">Negara</th>
+                            <th class="px-4 py-3">Penerima Subkontrak</th>
+                            <th class="px-4 py-3 rounded-r-xl">Negara Asal BB</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-100">
@@ -65,11 +66,12 @@
                                 <td class="px-4 py-3 text-center">{{ $row->currency }}</td>
                                 <td class="px-4 py-3 text-right font-mono">{{ number_format($row->amount, 2) }}</td>
                                 <td class="px-4 py-3 text-center">{{ $row->warehouse }}</td>
+                                <td class="px-4 py-3">{{ $row->penerima_subkontrak }}</td>
                                 <td class="px-4 py-3">{{ $row->country }}</td>
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="17" class="px-4 py-12 text-center text-slate-400">
+                                <td colspan="18" class="px-4 py-12 text-center text-slate-400">
                                     Tidak ada data untuk filter yang dipilih.
                                 </td>
                             </tr>

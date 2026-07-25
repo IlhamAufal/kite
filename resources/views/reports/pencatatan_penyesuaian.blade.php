@@ -63,7 +63,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="14" class="px-4 py-12 text-center text-slate-400">
+                                <td colspan="13" class="px-4 py-12 text-center text-slate-400">
                                     Tidak ada data untuk filter yang dipilih.
                                 </td>
                             </tr>

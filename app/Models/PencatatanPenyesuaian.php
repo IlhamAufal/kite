@@ -11,7 +11,7 @@ class PencatatanPenyesuaian extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'key_number', 'peb_baru', 'peb_lama', 'packingslipid',
+        'peb_baru', 'peb_lama', 'packingslipid',
         'delivery_date', 'cust_name', 'county', 'item_id',
         'item_name', 'unit', 'qty', 'currency_code', 'amount', 'synced_at',
     ];

@@ -11,7 +11,7 @@ class PemasukanHasilProduksi extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'key_number', 'dokumen_nomor', 'dokumen_tanggal',
+        'dokumen_nomor', 'dokumen_tanggal',
         'kode_barang', 'nama_barang', 'satuan',
         'jumlah_produksi', 'jumlah_subkon', 'gudang',
         'created_date', 'created_by', 'synced_at',

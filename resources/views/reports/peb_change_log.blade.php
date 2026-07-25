@@ -28,7 +28,6 @@
                     <thead class="bg-slate-50 font-bold font-montserrat text-[10px] tracking-wider text-slate-800">
                         <tr>
                             <th class="px-4 py-3 rounded-l-xl">No</th>
-                            <th class="px-4 py-3">Key Number</th>
                             <th class="px-4 py-3">Datetime Change</th>
                             <th class="px-4 py-3">Internal Packing Slip</th>
                             <th class="px-4 py-3">Packing Slip ID</th>
@@ -45,7 +44,6 @@
                         @forelse($data as $i => $row)
                             <tr class="hover:bg-slate-50 transition">
                                 <td class="px-4 py-3 text-slate-400">{{ ($data->currentPage() - 1) * $data->perPage() + $i + 1 }}</td>
-                                <td class="px-4 py-3 font-medium text-slate-700">{{ $row->key_number }}</td>
                                 <td class="px-4 py-3">{{ $row->datetimechange?->format('d/m/Y H:i:s') }}</td>
                                 <td class="px-4 py-3">{{ $row->internalpackingslipid }}</td>
                                 <td class="px-4 py-3">{{ $row->packingslipid }}</td>
@@ -59,7 +57,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="12" class="px-4 py-12 text-center text-slate-400">
+                                <td colspan="11" class="px-4 py-12 text-center text-slate-400">
                                     Tidak ada data untuk filter yang dipilih.
                                 </td>
                             </tr>

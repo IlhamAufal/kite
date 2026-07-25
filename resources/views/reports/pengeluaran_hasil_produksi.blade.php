@@ -28,7 +28,6 @@
                     <thead class="bg-slate-50 font-bold font-montserrat text-[10px] tracking-wider text-slate-800">
                         <tr>
                             <th class="px-4 py-3 rounded-l-xl">No</th>
-                            <th class="px-4 py-3">Key Number</th>
                             <th class="px-4 py-3">PEB Nomor</th>
                             <th class="px-4 py-3">PEB Tanggal</th>
                             <th class="px-4 py-3">Bukti Pengeluaran Nomor</th>
@@ -43,14 +42,14 @@
                             <th class="px-4 py-3 text-right">Nilai Barang</th>
                             <th class="px-4 py-3 text-right">Net Weight (Kg)</th>
                             <th class="px-4 py-3 text-right">Gross Weight (Kg)</th>
-                            <th class="px-4 py-3 rounded-r-xl text-right">Total Kg Net</th>
+                            <th class="px-4 py-3 text-right">Total Kg Net</th>
+                            <th class="px-4 py-3 rounded-r-xl text-right">Total Kg Gross</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-100">
                         @forelse($data as $i => $row)
                             <tr class="hover:bg-slate-50 transition">
                                 <td class="px-4 py-3 text-slate-400">{{ ($data->currentPage() - 1) * $data->perPage() + $i + 1 }}</td>
-                                <td class="px-4 py-3 font-medium text-slate-700">{{ $row->key_number }}</td>
                                 <td class="px-4 py-3">{{ $row->peb_nomor }}</td>
                                 <td class="px-4 py-3">{{ $row->peb_tanggal?->format('d/m/Y') }}</td>
                                 <td class="px-4 py-3">{{ $row->bk_pengeluaran_nomor }}</td>
@@ -65,7 +64,8 @@
                                 <td class="px-4 py-3 text-right font-mono">{{ number_format($row->nilai_barang, 2) }}</td>
                                 <td class="px-4 py-3 text-right font-mono">{{ number_format($row->net_weight, 4) }}</td>
                                 <td class="px-4 py-3 text-right font-mono">{{ number_format($row->gross_weight, 4) }}</td>
-                                <td class="px-4 py-3 text-right font-mono font-bold">{{ number_format($row->total_kg_net, 4) }}</td>
+                                <td class="px-4 py-3 text-right font-mono">{{ number_format($row->total_kg_net, 4) }}</td>
+                                <td class="px-4 py-3 text-right font-mono font-bold">{{ number_format($row->total_kg_gross, 4) }}</td>
                             </tr>
                         @empty
                             <tr>

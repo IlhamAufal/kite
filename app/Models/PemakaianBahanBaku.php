@@ -11,9 +11,10 @@ class PemakaianBahanBaku extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'key_number', 'no_pengeluaran', 'tgl_pengeluaran',
+        'no_pengeluaran', 'tgl_pengeluaran',
         'id_product', 'name_product', 'uom',
-        'qty_usage', 'warehouse', 'created_by', 'created_date', 'synced_at',
+        'qty_usage', 'warehouse', 'penerima_subkontrak', 'jumlah_disubkontrakkan',
+        'created_by', 'created_date', 'synced_at',
     ];
 
     protected $casts = [

@@ -27,10 +27,13 @@
                 <table class="w-full text-left text-xs text-slate-600">
                     <thead class="bg-slate-50 font-bold font-montserrat text-[10px] tracking-wider text-slate-800">
                         <tr>
+                            <th class="px-4 py-3 rounded-l-xl" colspan="5"></th>
+                            <th class="px-4 py-3 text-center" colspan="2">Pemasukan</th>
+                            <th class="px-4 py-3 text-center" colspan="2">Pengeluaran</th>
+                            <th class="px-4 py-3 rounded-r-xl" colspan="2"></th>
+                        </tr>
+                        <tr>
                             <th class="px-4 py-3 rounded-l-xl">No</th>
-                            <!-- <th class="px-4 py-3">Key Number</th>
-                            <th class="px-4 py-3">Bulan</th>
-                            <th class="px-4 py-3">Tahun</th> -->
                             <th class="px-4 py-3">Kode Barang</th>
                             <th class="px-4 py-3">Nama Barang</th>
                             <th class="px-4 py-3">Satuan</th>
@@ -63,7 +66,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="14" class="px-4 py-12 text-center text-slate-400">
+                                <td colspan="11" class="px-4 py-12 text-center text-slate-400">
                                     Tidak ada data untuk filter yang dipilih.
                                 </td>
                             </tr>
