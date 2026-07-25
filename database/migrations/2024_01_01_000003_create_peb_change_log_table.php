@@ -10,7 +10,6 @@ return new class extends Migration
     {
         Schema::create('peb_change_log', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('key_number', 20);
             $table->dateTime('datetimechange');
             $table->string('internalpackingslipid', 30)->nullable();
             $table->string('packingslipid', 30)->nullable();
@@ -25,7 +24,6 @@ return new class extends Migration
             $table->string('created_by', 30)->default('API_SYSTEM');
             $table->dateTime('synced_at')->nullable();
 
-            $table->index('key_number', 'idx_pcl_key_number');
             $table->index('packingslipid', 'idx_pcl_packingslipid');
             $table->index('datetimechange', 'idx_pcl_datetimechange');
         });

@@ -1,89 +1,52 @@
 @extends('layouts.main')
 
-@section('title', 'Dashboard - IT Inventory KITE PT Yupi Indo Jelly Gum Tbk')
-@section('header-title', 'Dashboard Overview')
+@section('title', 'Dashboard - KITE')
+@section('header-title', 'IT INVENTORY - PT. YUPI INDO JELLY GUM')
 
 @section('content')
 <div class="space-y-6">
+    <div class="relative overflow-hidden rounded-2xl bg-blue-600 p-6 text-white shadow-md">
+        <h2 class="font-fredoka text-xl tracking-wide">Dashboard</h2>
+        <p class="text-sky-100 text-xs mt-1">Sistem Pelaporan dan Pencatatan Persediaan Barang</p>
+    </div>
 
-    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#5eb3d6] to-[#4a9fc6] p-6 text-white shadow-md">
-        <div class="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <div>
-                <h2 class="font-fredoka text-2xl md:text-3xl tracking-wide">IT INVENTORY - PT. YUPI INDO JELLY GUM</h2>
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 space-y-3">
+        <div class="flex items-center gap-2 border-b border-slate-100 pb-3">
+            <div class="p-2 bg-blue-50 text-blue-600 rounded-lg">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
             </div>
+            <h2 class="font-bold text-slate-800 text-sm">Selamat Datang</h2>
+        </div>
+        <div class="text-xs text-slate-600 leading-relaxed space-y-2">
+            <p>Selamat datang di halaman <strong class="text-slate-800">IT Inventory</strong> PT. YUPI INDO JELLY GUM.</p>
+            <p>Untuk melihat <strong class="text-slate-800">Laporan</strong>, silahkan klik menu <strong class="text-slate-800">Reports</strong> yang ada di sebelah kiri halaman.</p>
+            <p>Lalu pilih rentang tanggal / waktu tertentu, dan tekan tombol <span class="px-2 py-0.5 bg-slate-100 text-slate-700 font-semibold rounded text-[11px]">Search</span>.</p>
         </div>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">
-            <div class="flex items-center justify-between">
-                <div>
-                    <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 font-montserrat">Pemasukan Raw Material</p>
-                    <h3 class="text-2xl font-bold text-slate-800 mt-1 font-montserrat">1,248 <span class="text-xs font-normal text-slate-500">dokumen</span></h3>
-                </div>
-                <div class="w-12 h-12 rounded-2xl bg-emerald-50 text-[#00a351] flex items-center justify-center">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                    </svg>
-                </div>
+    <div class="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 space-y-4">
+        <div class="flex items-center gap-2 border-b border-slate-100 pb-3">
+            <div class="p-2 bg-green-50 text-green-600 rounded-lg">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+                </svg>
             </div>
-            <div class="mt-3 flex items-center text-xs text-emerald-600 font-medium">
-                <span>↑ 12% dari bulan lalu</span>
-            </div>
+            <h2 class="font-bold text-slate-800 text-sm">Pintasan Halaman Report</h2>
         </div>
 
-        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">
-            <div class="flex items-center justify-between">
-                <div>
-                    <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 font-montserrat">Pemakaian Bahan Baku</p>
-                    <h3 class="text-2xl font-bold text-slate-800 mt-1 font-montserrat">856 <span class="text-xs font-normal text-slate-500">dokumen</span></h3>
-                </div>
-                <div class="w-12 h-12 rounded-2xl bg-sky-50 text-[#4a9fc6] flex items-center justify-center">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                    </svg>
-                </div>
-            </div>
-            <div class="mt-3 flex items-center text-xs text-slate-500 font-medium">
-                <span>Diperbarui hari ini</span>
-            </div>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">
-            <div class="flex items-center justify-between">
-                <div>
-                    <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 font-montserrat">Hasil Produksi</p>
-                    <h3 class="text-2xl font-bold text-slate-800 mt-1 font-montserrat">3,420 <span class="text-xs font-normal text-slate-500">dokumen</span></h3>
-                </div>
-                <div class="w-12 h-12 rounded-2xl bg-amber-50 text-amber-500 flex items-center justify-center">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
-                    </svg>
-                </div>
-            </div>
-            <div class="mt-3 flex items-center text-xs text-emerald-600 font-medium">
-                <span>↑ 5.4% dari bulan lalu</span>
-            </div>
-        </div>
-
-        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition">
-            <div class="flex items-center justify-between">
-                <div>
-                    <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 font-montserrat">Pengeluaran (PEB)</p>
-                    <h3 class="text-2xl font-bold text-slate-800 mt-1 font-montserrat">940 <span class="text-xs font-normal text-slate-500">dokumen</span></h3>
-                </div>
-                <div class="w-12 h-12 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
-                    </svg>
-                </div>
-            </div>
-            <div class="mt-3 flex items-center text-xs text-purple-600 font-medium">
-                <span>Siap diexport</span>
-            </div>
+        <div class="flex flex-wrap gap-2.5">
+            <a href="{{ route('reports.pemasukan-bahan-baku') }}" class="px-3.5 py-2 bg-slate-100 hover:bg-green-600 hover:text-white text-slate-700 text-xs font-medium rounded-lg transition-all shadow-sm">Pemasukan Bahan Baku</a>
+            <a href="{{ route('reports.pemakaian-bahan-baku') }}" class="px-3.5 py-2 bg-slate-100 hover:bg-green-600 hover:text-white text-slate-700 text-xs font-medium rounded-lg transition-all shadow-sm">Pemakaian Bahan Baku</a>
+            <a href="{{ route('reports.mutasi-bahan-baku') }}" class="px-3.5 py-2 bg-slate-100 hover:bg-green-600 hover:text-white text-slate-700 text-xs font-medium rounded-lg transition-all shadow-sm">Mutasi Bahan Baku</a>
+            <a href="{{ route('reports.pemasukan-hasil-produksi') }}" class="px-3.5 py-2 bg-slate-100 hover:bg-green-600 hover:text-white text-slate-700 text-xs font-medium rounded-lg transition-all shadow-sm">Pemasukan Hasil Produksi</a>
+            <a href="{{ route('reports.pengeluaran-hasil-produksi') }}" class="px-3.5 py-2 bg-slate-100 hover:bg-green-600 hover:text-white text-slate-700 text-xs font-medium rounded-lg transition-all shadow-sm">Pengeluaran Hasil Produksi</a>
+            <a href="{{ route('reports.mutasi-hasil-produksi') }}" class="px-3.5 py-2 bg-slate-100 hover:bg-green-600 hover:text-white text-slate-700 text-xs font-medium rounded-lg transition-all shadow-sm">Mutasi Hasil Produksi</a>
+            <a href="{{ route('reports.pencatatan-penyesuaian') }}" class="px-3.5 py-2 bg-slate-100 hover:bg-green-600 hover:text-white text-slate-700 text-xs font-medium rounded-lg transition-all shadow-sm">Pencatatan Penyesuaian</a>
+            <a href="{{ route('reports.peb-change-log') }}" class="px-3.5 py-2 bg-slate-100 hover:bg-green-600 hover:text-white text-slate-700 text-xs font-medium rounded-lg transition-all shadow-sm">PEB Change Log</a>
+            <a href="{{ route('datalog') }}" class="px-3.5 py-2 bg-slate-100 hover:bg-green-600 hover:text-white text-slate-700 text-xs font-medium rounded-lg transition-all shadow-sm">Data Log</a>
         </div>
     </div>
-
-
 </div>
 @endsection

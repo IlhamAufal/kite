@@ -11,7 +11,7 @@ class PengeluaranHasilProduksi extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'key_number', 'peb_nomor', 'peb_tanggal',
+        'peb_nomor', 'peb_tanggal',
         'bk_pengeluaran_nomor', 'bk_pengeluaran_tanggal',
         'pembeli', 'negara_tujuan', 'kode_barang', 'nama_barang',
         'satuan', 'jumlah', 'mata_uang', 'nilai_barang',

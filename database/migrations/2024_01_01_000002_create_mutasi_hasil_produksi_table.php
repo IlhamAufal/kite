@@ -10,7 +10,6 @@ return new class extends Migration
     {
         Schema::create('mutasi_hasil_produksi', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('key_number', 20);
             $table->string('bulan', 10);
             $table->string('tahun', 10);
             $table->string('kode_barang', 50);
@@ -27,7 +26,6 @@ return new class extends Migration
             $table->string('created_by', 50)->default('API_SYSTEM');
             $table->dateTime('synced_at')->nullable();
 
-            $table->index('key_number', 'idx_mhp_key_number');
             $table->index('kode_barang', 'idx_mhp_kode_barang');
             $table->index(['bulan', 'tahun'], 'idx_mhp_bulan_tahun');
             $table->index('gudang', 'idx_mhp_gudang');

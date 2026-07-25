@@ -11,7 +11,7 @@ class MutasiHasilProduksi extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'key_number', 'bulan', 'tahun', 'kode_barang', 'nama_barang',
+        'bulan', 'tahun', 'kode_barang', 'nama_barang',
         'satuan', 'saldo_awal', 'pemasukan', 'pemasukan_other',
         'pengeluaran', 'pengeluaran_other', 'saldo_akhir',
         'gudang', 'created_date', 'created_by', 'synced_at',

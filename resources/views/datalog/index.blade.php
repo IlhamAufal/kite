@@ -6,7 +6,7 @@
 @section('content')
 <div class="space-y-6">
 
-    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-[#5eb3d6] to-[#4a9fc6] p-6 text-white shadow-md">
+    <div class="relative overflow-hidden rounded-2xl bg-blue-600 p-6 text-white shadow-md">
         <div class="relative z-10 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
                 <h2 class="font-fredoka text-2xl md:text-3xl tracking-wide">Selamat Datang di IT Inventory KITE!</h2>
@@ -43,7 +43,7 @@
                     <p class="text-xs font-semibold uppercase tracking-wider text-slate-400 font-montserrat">Pemakaian Bahan Baku</p>
                     <h3 class="text-2xl font-bold text-slate-800 mt-1 font-montserrat">856 <span class="text-xs font-normal text-slate-500">dokumen</span></h3>
                 </div>
-                <div class="w-12 h-12 rounded-2xl bg-sky-50 text-[#4a9fc6] flex items-center justify-center">
+                <div class="w-12 h-12 rounded-2xl bg-sky-50 text-blue-600 flex items-center justify-center">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
                     </svg>
@@ -147,7 +147,7 @@
 
             <div class="overflow-x-auto">
                 <table class="w-full text-left text-xs text-slate-600">
-                    <thead class="bg-slate-50 text-slate-500 uppercase font-montserrat text-[10px] tracking-wider">
+                    <thead class="bg-slate-50 font-bold font-montserrat text-[10px] tracking-wider text-slate-800">
                         <tr>
                             <th class="px-4 py-3 rounded-l-xl">Waktu</th>
                             <th class="px-4 py-3">Modul / Event</th>

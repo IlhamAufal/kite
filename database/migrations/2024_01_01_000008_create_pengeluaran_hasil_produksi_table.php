@@ -10,7 +10,6 @@ return new class extends Migration
     {
         Schema::create('pengeluaran_hasil_produksi', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('key_number', 20)->nullable();
             $table->string('peb_nomor', 10)->nullable();
             $table->date('peb_tanggal')->nullable();
             $table->string('bk_pengeluaran_nomor', 20)->nullable();

@@ -11,7 +11,7 @@ class MutasiBahanBaku extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'bulan', 'tahun', 'key_number', 'kode_barang', 'nama_barang',
+        'bulan', 'tahun', 'kode_barang', 'nama_barang',
         'satuan', 'saldo_awal', 'pemasukan', 'pemasukan_lain',
         'pengeluaran', 'pengeluaran_lain', 'saldo_akhir',
         'gudang', 'created_date', 'created_by', 'synced_at',

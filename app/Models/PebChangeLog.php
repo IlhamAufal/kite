@@ -11,7 +11,7 @@ class PebChangeLog extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'key_number', 'datetimechange', 'internalpackingslipid',
+        'datetimechange', 'internalpackingslipid',
         'packingslipid', 'pebdatebaru', 'pebdatelama',
         'userid', 'dataareaid', 'recversion',
         'partition_col', 'recid', 'created_date', 'created_by', 'synced_at',

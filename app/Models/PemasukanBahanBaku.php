@@ -11,9 +11,10 @@ class PemasukanBahanBaku extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'key_number', 'tgl_rekam', 'doc_type', 'nomor_pib', 'tanggal_pib',
+        'tgl_rekam', 'doc_type', 'nomor_pib', 'tanggal_pib',
         'kode_hs', 'gr_number', 'gr_date', 'id_product', 'name_product',
         'uom', 'qty', 'currency', 'amount', 'warehouse', 'country',
+        'penerima_subkontrak',
         'created_date', 'created_by', 'synced_at',
     ];
 

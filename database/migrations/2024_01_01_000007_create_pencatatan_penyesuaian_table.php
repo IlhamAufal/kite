@@ -10,7 +10,6 @@ return new class extends Migration
     {
         Schema::create('pencatatan_penyesuaian', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('key_number', 20)->nullable();
             $table->string('peb_baru', 50)->nullable()->comment('PEBNUMBERB dari SQL Server');
             $table->string('peb_lama', 50)->nullable()->comment('PEBNUMBERL dari SQL Server');
             $table->string('packingslipid', 100)->nullable()->comment('PACKINGSLIPID / bukti pengeluaran nomor');

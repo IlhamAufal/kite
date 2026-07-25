@@ -12,7 +12,6 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('bulan', 10);
             $table->string('tahun', 10);
-            $table->string('key_number', 20);
             $table->string('kode_barang', 20);
             $table->string('nama_barang', 150);
             $table->string('satuan', 10);
@@ -27,7 +26,6 @@ return new class extends Migration
             $table->string('created_by', 10)->default('API_SYSTEM');
             $table->dateTime('synced_at')->nullable();
 
-            $table->index('key_number', 'idx_key_number');
             $table->index('kode_barang', 'idx_kode_barang');
             $table->index(['bulan', 'tahun'], 'idx_bulan_tahun');
             $table->index('gudang', 'idx_gudang');
