@@ -13,7 +13,10 @@
         </div>
         <div class="flex items-center space-x-2">
             <button onclick="window.location.reload()" class="bg-white border border-slate-200 text-slate-600 hover:bg-slate-50 px-4 py-2 rounded-xl text-xs font-semibold shadow-sm transition flex items-center">
-                <span class="mr-1.5">🔄</span> Refresh Logs
+                <svg class="w-3.5 h-3.5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                </svg>
+                Refresh Logs
             </button>
         </div>
     </div>
@@ -44,7 +47,7 @@
 
             <div class="flex items-center space-x-2">
                 <button type="submit" class="flex-1 bg-[#00a351] hover:bg-[#008f46] text-white font-medium text-xs py-2.5 px-4 rounded-xl shadow-sm transition text-center font-montserrat">
-                    🔍 Filter Data
+                    Filter Data
                 </button>
                 <a href="{{ route('datalog.index') }}" class="bg-slate-100 hover:bg-slate-200 text-slate-600 font-medium text-xs py-2.5 px-3 rounded-xl transition">
                     Reset

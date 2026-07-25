@@ -3,41 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'IT Inventory KITE - PT. Yupi Indo Jelly Gum Tbk')</title>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Montserrat:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        .font-fredoka { font-family: 'Fredoka', sans-serif; }
+        .font-montserrat { font-family: 'Montserrat', sans-serif; }
+        .font-poppins { font-family: 'Poppins', sans-serif; }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        .table-wrap { overflow-x: auto; }
+        .table-wrap table { min-width: 100%; }
+
+        [x-cloak] { display: none !important; }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideOutRight {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+        .toast-enter { animation: slideInRight 0.3s ease-out; }
+        .toast-exit { animation: slideOutRight 0.3s ease-in; }
+    </style>
+
+    @stack('styles')
 </head>
 <body class="bg-slate-50 font-poppins text-slate-800 antialiased">
 
     <div class="flex h-screen overflow-hidden">
-        
-        <aside class="w-64 bg-slate-900 text-slate-300 flex flex-col transition-all duration-300 shadow-xl z-20">
-            <div class="h-16 flex items-center justify-center px-6 bg-gradient-to-r from-[#5eb3d6] to-[#4a9fc6]">
-                <span class="font-fredoka text-2xl tracking-wide text-white drop-shadow-sm">YUPI KITE</span>
-            </div>
 
-            <div class="flex-1 overflow-y-auto py-4 px-3 space-y-1">
-                @include('layout.partial.sidebar')
-            </div>
-
-            <div class="p-4 border-t border-slate-800 text-xs text-slate-500 text-center">
-                &copy; {{ date('Y') }} PT. Yupi Indo Jelly Gum Tbk
-            </div>
-        </aside>
+        @include('layouts.partials.sidebar')
 
         <div class="flex-1 flex flex-col overflow-hidden">
-            
+
             <header class="h-16 bg-white shadow-sm flex items-center justify-between px-8 z-10">
                 <div class="flex items-center space-x-3">
+                    <button id="sidebar-toggle" class="lg:hidden mr-2 text-slate-500 hover:text-slate-700">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
                     <h1 class="font-montserrat font-bold text-lg text-slate-700">@yield('header-title', 'Dashboard')</h1>
                 </div>
 
                 <div class="flex items-center space-x-4">
-                    <!-- <span class="text-sm font-medium text-slate-600">Administrator</span> -->
+                    @yield('header-actions')
+
+                    <div class="flex items-center space-x-3 pl-4 border-l border-slate-200">
+                        <div class="w-8 h-8 rounded-full bg-[#5eb3d6] flex items-center justify-center text-white text-xs font-bold">
+                            {{ substr(Auth::user()->userid ?? 'U', 0, 1) }}
+                        </div>
+                        <span class="text-sm font-medium text-slate-600 hidden sm:block">{{ Auth::user()->userid ?? '' }}</span>
+                    </div>
+
                     <form action="{{ route('logout') }}" method="POST" class="inline">
                         @csrf
                         <button type="submit" class="bg-red-500 hover:bg-red-600 text-white text-xs font-medium px-4 py-2 rounded-full transition shadow-sm">
@@ -54,11 +87,51 @@
         </div>
     </div>
 
-    @if(session('success'))
-        <div class="fixed bottom-5 right-5 bg-[#00a351] text-white px-6 py-3 rounded-2xl shadow-lg z-50 animate-bounce">
-            {{ session('success') }}
-        </div>
-    @endif
+    {{-- Toast Notifications --}}
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 space-y-3">
+        @if(session('success'))
+            <div class="toast-enter bg-[#00a351] text-white px-6 py-3 rounded-2xl shadow-lg flex items-center space-x-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span class="text-sm font-medium">{{ session('success') }}</span>
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div class="toast-enter bg-red-500 text-white px-6 py-3 rounded-2xl shadow-lg flex items-center space-x-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+                <span class="text-sm font-medium">{{ session('error') }}</span>
+            </div>
+        @endif
+
+        @if(session('warning'))
+            <div class="toast-enter bg-amber-500 text-white px-6 py-3 rounded-2xl shadow-lg flex items-center space-x-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                </svg>
+                <span class="text-sm font-medium">{{ session('warning') }}</span>
+            </div>
+        @endif
+    </div>
+
+    @stack('scripts')
+
+    <script>
+        document.querySelectorAll('#toast-container > div').forEach(function(toast) {
+            setTimeout(function() {
+                toast.classList.remove('toast-enter');
+                toast.classList.add('toast-exit');
+                setTimeout(function() { toast.remove(); }, 300);
+            }, 4000);
+        });
+
+        document.getElementById('sidebar-toggle')?.addEventListener('click', function() {
+            document.querySelector('aside').classList.toggle('-translate-x-full');
+        });
+    </script>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layouts.main')
 
 @section('title', 'Dashboard - IT Inventory KITE PT Yupi Indo Jelly Gum Tbk')
 @section('header-title', 'Dashboard Overview')
