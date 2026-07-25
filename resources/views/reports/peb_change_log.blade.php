@@ -25,13 +25,13 @@
             </div>
             <div class="table-wrap p-6">
                 <table class="w-full text-left text-xs text-slate-600">
-                    <thead class="bg-slate-50 text-slate-500 uppercase font-montserrat text-[10px] tracking-wider">
+                    <thead class="bg-slate-50 font-bold font-montserrat text-[10px] tracking-wider text-slate-800">
                         <tr>
                             <th class="px-4 py-3 rounded-l-xl">No</th>
                             <th class="px-4 py-3">Key Number</th>
-                            <th class="px-4 py-3">Waktu Change</th>
+                            <th class="px-4 py-3">Datetime Change</th>
                             <th class="px-4 py-3">Internal Packing Slip</th>
-                            <th class="px-4 py-3">Packing Slip</th>
+                            <th class="px-4 py-3">Packing Slip ID</th>
                             <th class="px-4 py-3">PEB Date Baru</th>
                             <th class="px-4 py-3">PEB Date Lama</th>
                             <th class="px-4 py-3">User ID</th>

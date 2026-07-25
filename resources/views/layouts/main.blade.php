@@ -6,18 +6,18 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title', 'IT Inventory KITE - PT. Yupi Indo Jelly Gum Tbk')</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&family=Montserrat:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
     <style>
-        .font-fredoka { font-family: 'Fredoka', sans-serif; }
-        .font-montserrat { font-family: 'Montserrat', sans-serif; }
-        .font-poppins { font-family: 'Poppins', sans-serif; }
+        :root {
+            --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body, .font-poppins { font-family: var(--font-primary); }
+        .font-fredoka { font-family: var(--font-primary); font-weight: 700; }
+        .font-montserrat { font-family: var(--font-primary); }
 
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: transparent; }
@@ -65,9 +65,6 @@
                     @yield('header-actions')
 
                     <div class="flex items-center space-x-3 pl-4 border-l border-slate-200">
-                        <div class="w-8 h-8 rounded-full bg-[#5eb3d6] flex items-center justify-center text-white text-xs font-bold">
-                            {{ substr(Auth::user()->userid ?? 'U', 0, 1) }}
-                        </div>
                         <span class="text-sm font-medium text-slate-600 hidden sm:block">{{ Auth::user()->userid ?? '' }}</span>
                     </div>
 

@@ -25,17 +25,17 @@
             </div>
             <div class="table-wrap p-6">
                 <table class="w-full text-left text-xs text-slate-600">
-                    <thead class="bg-slate-50 text-slate-500 uppercase font-montserrat text-[10px] tracking-wider">
+                    <thead class="bg-slate-50 font-bold font-montserrat text-[10px] tracking-wider text-slate-800">
                         <tr>
                             <th class="px-4 py-3 rounded-l-xl">No</th>
                             <th class="px-4 py-3">Key Number</th>
                             <th class="px-4 py-3">Dokumen Nomor</th>
-                            <th class="px-4 py-3">Tgl Dokumen</th>
+                            <th class="px-4 py-3">Dokumen tanggal</th>
                             <th class="px-4 py-3">Kode Barang</th>
                             <th class="px-4 py-3">Nama Barang</th>
                             <th class="px-4 py-3">Satuan</th>
                             <th class="px-4 py-3 text-right">Jumlah Produksi</th>
-                            <th class="px-4 py-3 text-right">Jumlah Subkon</th>
+                            <th class="px-4 py-3 text-right">Jumlah dari Subkontrak</th>
                             <th class="px-4 py-3 rounded-r-xl">Gudang</th>
                         </tr>
                     </thead>

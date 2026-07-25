@@ -25,21 +25,21 @@
             </div>
             <div class="table-wrap p-6">
                 <table class="w-full text-left text-xs text-slate-600">
-                    <thead class="bg-slate-50 text-slate-500 uppercase font-montserrat text-[10px] tracking-wider">
+                    <thead class="bg-slate-50 font-bold font-montserrat text-[10px] tracking-wider text-slate-800">
                         <tr>
                             <th class="px-4 py-3 rounded-l-xl">No</th>
-                            <th class="px-4 py-3">Key Number</th>
+                            <!-- <th class="px-4 py-3">Key Number</th> -->
                             <th class="px-4 py-3">Tgl Rekam</th>
                             <th class="px-4 py-3">Doc Type</th>
-                            <th class="px-4 py-3">No PIB</th>
+                            <th class="px-4 py-3">Dokumen Pabean Nomor</th>
                             <th class="px-4 py-3">Tgl PIB</th>
                             <th class="px-4 py-3">Kode HS</th>
                             <th class="px-4 py-3">GR Number</th>
                             <th class="px-4 py-3">GR Date</th>
-                            <th class="px-4 py-3">Kode Produk</th>
-                            <th class="px-4 py-3">Nama Produk</th>
+                            <th class="px-4 py-3">Kode BB</th>
+                            <th class="px-4 py-3">Nama Barang</th>
                             <th class="px-4 py-3">Satuan</th>
-                            <th class="px-4 py-3 text-right">Qty</th>
+                            <th class="px-4 py-3 text-right">Jumlah</th>
                             <th class="px-4 py-3">Mata Uang</th>
                             <th class="px-4 py-3 text-right">Nilai</th>
                             <th class="px-4 py-3">Gudang</th>
@@ -50,7 +50,7 @@
                         @forelse($data as $i => $row)
                             <tr class="hover:bg-slate-50 transition">
                                 <td class="px-4 py-3 text-slate-400">{{ ($data->currentPage() - 1) * $data->perPage() + $i + 1 }}</td>
-                                <td class="px-4 py-3 font-medium text-slate-700">{{ $row->key_number }}</td>
+                                <!-- <td class="px-4 py-3 font-medium text-slate-700">{{ $row->key_number }}</td> -->
                                 <td class="px-4 py-3">{{ $row->tgl_rekam?->format('d/m/Y') }}</td>
                                 <td class="px-4 py-3">{{ $row->doc_type }}</td>
                                 <td class="px-4 py-3">{{ $row->nomor_pib }}</td>

@@ -25,29 +25,29 @@
             </div>
             <div class="table-wrap p-6">
                 <table class="w-full text-left text-xs text-slate-600">
-                    <thead class="bg-slate-50 text-slate-500 uppercase font-montserrat text-[10px] tracking-wider">
+                    <thead class="bg-slate-50 font-bold font-montserrat text-[10px] tracking-wider text-slate-800">
                         <tr>
                             <th class="px-4 py-3 rounded-l-xl">No</th>
-                            <th class="px-4 py-3">Key Number</th>
+                            <!-- <th class="px-4 py-3">Key Number</th> -->
                             <th class="px-4 py-3">PEB Baru</th>
                             <th class="px-4 py-3">PEB Lama</th>
                             <th class="px-4 py-3">Packing Slip</th>
                             <th class="px-4 py-3">Delivery Date</th>
-                            <th class="px-4 py-3">Customer</th>
+                            <th class="px-4 py-3">Pembeli</th>
                             <th class="px-4 py-3">Negara</th>
-                            <th class="px-4 py-3">Item ID</th>
-                            <th class="px-4 py-3">Item Name</th>
-                            <th class="px-4 py-3">Unit</th>
-                            <th class="px-4 py-3 text-right">Qty</th>
-                            <th class="px-4 py-3">Currency</th>
-                            <th class="px-4 py-3 rounded-r-xl text-right">Amount</th>
+                            <th class="px-4 py-3">Kode Barang</th>
+                            <th class="px-4 py-3">Nama Barang</th>
+                            <th class="px-4 py-3">Satuan</th>
+                            <th class="px-4 py-3 text-right">Jumlah</th>
+                            <th class="px-4 py-3">Mata Uang</th>
+                            <th class="px-4 py-3 rounded-r-xl text-right">Nilai</th>
                         </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-100">
                         @forelse($data as $i => $row)
                             <tr class="hover:bg-slate-50 transition">
                                 <td class="px-4 py-3 text-slate-400">{{ ($data->currentPage() - 1) * $data->perPage() + $i + 1 }}</td>
-                                <td class="px-4 py-3 font-medium text-slate-700">{{ $row->key_number }}</td>
+                                <!-- <td class="px-4 py-3 font-medium text-slate-700">{{ $row->key_number }}</td> -->
                                 <td class="px-4 py-3">{{ $row->peb_baru }}</td>
                                 <td class="px-4 py-3">{{ $row->peb_lama }}</td>
                                 <td class="px-4 py-3">{{ $row->packingslipid }}</td>

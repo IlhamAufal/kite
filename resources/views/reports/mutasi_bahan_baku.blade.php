@@ -25,12 +25,12 @@
             </div>
             <div class="table-wrap p-6">
                 <table class="w-full text-left text-xs text-slate-600">
-                    <thead class="bg-slate-50 text-slate-500 uppercase font-montserrat text-[10px] tracking-wider">
+                    <thead class="bg-slate-50 font-bold font-montserrat text-[10px] tracking-wider text-slate-800">
                         <tr>
                             <th class="px-4 py-3 rounded-l-xl">No</th>
-                            <th class="px-4 py-3">Key Number</th>
+                            <!-- <th class="px-4 py-3">Key Number</th>
                             <th class="px-4 py-3">Bulan</th>
-                            <th class="px-4 py-3">Tahun</th>
+                            <th class="px-4 py-3">Tahun</th> -->
                             <th class="px-4 py-3">Kode Barang</th>
                             <th class="px-4 py-3">Nama Barang</th>
                             <th class="px-4 py-3">Satuan</th>
@@ -47,9 +47,9 @@
                         @forelse($data as $i => $row)
                             <tr class="hover:bg-slate-50 transition">
                                 <td class="px-4 py-3 text-slate-400">{{ ($data->currentPage() - 1) * $data->perPage() + $i + 1 }}</td>
-                                <td class="px-4 py-3 font-medium text-slate-700">{{ $row->key_number }}</td>
+                                <!-- <td class="px-4 py-3 font-medium text-slate-700">{{ $row->key_number }}</td>
                                 <td class="px-4 py-3 text-center">{{ $row->bulan }}</td>
-                                <td class="px-4 py-3 text-center">{{ $row->tahun }}</td>
+                                <td class="px-4 py-3 text-center">{{ $row->tahun }}</td> -->
                                 <td class="px-4 py-3 font-medium text-slate-700">{{ $row->kode_barang }}</td>
                                 <td class="px-4 py-3">{{ $row->nama_barang }}</td>
                                 <td class="px-4 py-3 text-center">{{ $row->satuan }}</td>
