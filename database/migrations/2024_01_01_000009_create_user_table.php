@@ -9,8 +9,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('user', function (Blueprint $table) {
-            $table->string('userid', 15)->nullable();
-            $table->string('userpswd', 25)->nullable();
+            $table->string('userid', 15)->primary();
+            $table->string('userpswd', 255);
             $table->string('company', 50)->nullable();
         });
     }

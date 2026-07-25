@@ -70,4 +70,9 @@ class AuthController extends Controller
             'login_at' => now(),
         ]);
     }
+
+    public function index()
+    {
+        return view('dashboard');
+    }
 }
