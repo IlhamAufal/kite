@@ -10,10 +10,13 @@ use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 
 class MutasiHasilProduksiExport implements FromQuery, WithHeadings, WithMapping, ShouldAutoSize
 {
+    protected $from_date, $to_date;
     protected $month, $year;
 
-    public function __construct($month = null, $year = null)
+    public function __construct($from_date = null, $to_date = null, $month = null, $year = null)
     {
+        $this->from_date = $from_date;
+        $this->to_date = $to_date;
         $this->month = $month;
         $this->year = $year;
     }
