@@ -12,6 +12,7 @@
 
     <div class="w-full max-w-sm">
         <div class="text-center mb-8">
+            <img src="{{ asset('storage/logo-yupi.png') }}" alt="Logo Yupi" class="mx-auto h-12 w-auto">
             <h1 class="text-2xl font-bold text-gray-800">KITE Inventory</h1>
             <p class="text-sm text-gray-500 mt-1">PT. Yupi Indo Jelly Gum</p>
         </div>
@@ -65,7 +66,7 @@
         </div>
 
         <p class="text-center text-xs text-gray-400 mt-6">
-            &copy; {{ date('Y') }} IT Department - Yupi Indo Jelly Gum
+            &copy; {{ date('Y') }} PT Yupi Indo Jelly Gum Tbk
         </p>
     </div>
 

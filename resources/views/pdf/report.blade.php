@@ -119,9 +119,9 @@
     <!-- Header Section -->
     <table class="header-table">
         <tr>
-            <td>
+            <!-- <td>
                 <img src="{{ public_path('storage/logo-yupi.png') }}" class="company-logo" alt="Logo Yupi">
-            </td>
+            </td> -->
             <td style="text-align: right;">
                 <div class="doc-title">{{ $title ?? 'Report' }}</div>
                 @if(isset($subtitle))
