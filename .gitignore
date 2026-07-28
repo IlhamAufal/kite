@@ -19,3 +19,4 @@ yarn-error.log
 /.kiro
 /.agent
 yp_kite.sql
+api-sync-rebase-guide.md
