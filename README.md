@@ -124,7 +124,7 @@ Semua report mendukung filter (date range / bulan+tahun), pagination, dan export
 ### 1. Clone Repository
 
 ```bash
-git clone <repository-url> kite
+git clone https://github.com/IlhamAufal/kite.git kite
 cd kite
 ```
 
@@ -140,34 +140,6 @@ npm install
 ```bash
 cp .env.example .env
 php artisan key:generate
-```
-
-Edit `.env` sesuai environment lokal:
-
-```env
-APP_NAME="IT Inventory KITE"
-APP_URL=http://localhost/kite
-
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=yp_kite
-DB_USERNAME=root
-DB_PASSWORD=
-
-# SQL Server (untuk Sync KITE)
-DB_SQLSRV_HOST=127.0.0.1
-DB_SQLSRV_PORT=1433
-DB_SQLSRV_DATABASE=YpKiteUser
-DB_SQLSRV_USERNAME=sa
-DB_SQLSRV_PASSWORD=
-
-# API Parsing credentials
-API_BASIC_USER=SAP_USER
-API_BASIC_PASSWORD=kite!Gummy
-
-# Queue
-QUEUE_CONNECTION=database
 ```
 
 ### 4. Database Setup
@@ -224,7 +196,7 @@ php artisan queue:work --queue=default --tries=3
 
 | User ID | Password | Company |
 |---------|----------|---------|
-| `admin` | `admin123` | PT. Yupi Indo Jelly Gum |
+| `admin01` | `admin123` | PT. Yupi Indo Jelly Gum |
 
 > Password di-hash dengan bcrypt. Lihat `database/seeders/UserSeeder.php` untuk detail.
 
@@ -307,39 +279,6 @@ kite/
 | GET | `/api/sync/kite/count-source` | Session | Count dari SQL Server |
 | GET | `/api/sync/kite/count-db` | Session | Count dari MySQL |
 | POST | `/api/sync/kite/delete-range` | Session | Hapus data by range |
-
----
-
-## API Parsing Usage
-
-### Insert Data
-
-```bash
-curl -X POST "http://localhost/kite/public/api/parsing?cat=pemasukan_bahan_baku" \
-  -u "SAP_USER:kite!Gummy" \
-  -H "Content-Type: application/json" \
-  -d '[
-    {
-      "key_number": "BB-001",
-      "tgl_rekam": "2024-01-15",
-      "doc_type": "KITE",
-      "nomor_pib": "000123",
-      "tanggal_pib": "2024-01-10",
-      "id_product": "R1234",
-      "name_product": "Sugar",
-      "qty": 1000
-    }
-  ]'
-```
-
-### Delete Data
-
-```bash
-curl -X POST "http://localhost/kite/public/api/parsing?cat=DEL" \
-  -u "SAP_USER:kite!Gummy" \
-  -H "Content-Type: application/json" \
-  -d '{"category": "pemasukan_bahan_baku", "key_number": "BB-001"}'
-```
 
 ---
 
