@@ -1,8 +1,9 @@
 <aside class="w-64 bg-slate-900 text-slate-300 flex flex-col transition-all duration-300 shadow-xl z-20">
 
     <div class="h-16 flex items-center justify-center px-6 bg-blue-600">
-        <a href="{{ route('dashboard') }}" class="font-fredoka text-2xl tracking-wide text-white drop-shadow-sm">
-            YUPI KITE
+        <a href="{{ route('dashboard') }}" class="inline-flex items-center gap-3 font-fredoka text-2xl tracking-wide text-white drop-shadow-sm">
+            <img src="{{ asset('storage/logo-yupi.webp') }}" alt="Logo Yupi Kite" class="h-8 w-auto shrink-0 object-contain">
+            <span class="leading-none">YUPI KITE</span>
         </a>
     </div>
 
