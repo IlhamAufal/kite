@@ -18,5 +18,7 @@ yarn-error.log
 /.vscode
 /.kiro
 /.agent
+/dompdf
+/storage/app/public
 yp_kite.sql
 api-sync-rebase-guide.md
